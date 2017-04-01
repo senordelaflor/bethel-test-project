@@ -1,0 +1,13 @@
+{
+  "name": "bethel",
+  "description": "This is a Bethel test project",
+  "main": "",
+  "authors": [
+    "Pablo Martinez"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "dependencies": {
+    "normalize-scss": "normalize.scss#^6.0.0"
+  }
+}

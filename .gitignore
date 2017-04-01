@@ -1,0 +1,11 @@
+#OS junk files
+[Tt]humbs.db
+*.DS_Store
+
+#node, bower, and dist
+node_modules
+bower_components
+dist/
+
+#IDE files
+.idea/

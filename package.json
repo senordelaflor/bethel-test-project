@@ -1,0 +1,25 @@
+{
+  "name": "bethel",
+  "version": "0.1.0",
+  "description": "This is a test project for Bethel",
+  "author": "Pablo Martinez",
+  "devDependencies": {
+    "browser-sync": "^2.18.7",
+    "fs": "0.0.1-security",
+    "gulp": "^3.9.1",
+    "gulp-bower": "0.0.13",
+    "gulp-concat": "^2.6.1",
+    "gulp-gzip": "^1.4.0",
+    "gulp-html-replace": "^1.6.2",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-notify": "^3.0.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.4.1",
+    "gulp-uglify": "^2.0.1"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "delete": "^0.3.2",
+    "normalize.css": "^5.0.0"
+  }
+}
