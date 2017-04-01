@@ -1,2 +1,8 @@
 //hero background-image
 //main title
+.hero {
+  @extend %hero;
+  &::before {
+    @include bg('../img/optimized/', 'mohammad_yearuzzaman', 'jpg');
+  }
+}
