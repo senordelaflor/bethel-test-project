@@ -1,8 +1,9 @@
-//hero background-image
-//main title
 .hero {
   @extend %hero;
+  @extend %flex--center;
   &::before {
-    @include bg('../img/optimized/', 'mohammad_yearuzzaman', 'jpg');
+    @include responsive-bg-img('../img/optimized/', 'mohammad_yearuzzaman', 'jpg');
   }
 }
+
+

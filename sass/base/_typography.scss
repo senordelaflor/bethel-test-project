@@ -1,4 +1,14 @@
-//h1
+h1 {
+  font-family: $title-font;
+  font-style: italic;
+  font-weight: normal;
+  color: $white;
+  line-height: 60px;
+  border-bottom: 1px solid $white;
+  @include mq($md){
+    font-size: 68px;
+  }
+}
 //h2
 //h3
 //h4

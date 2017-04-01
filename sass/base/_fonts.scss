@@ -1,1 +1,17 @@
-//fonts
+//variables
+$title-font: 'utopia-std';
+$subtitle-font: 'gotham-bold', sans-serif;
+$body-font: 'gotham-regular', sans-serif;
+
+//font-face declarations
+@font-face {
+  font-family: $subtitle-font;
+  font-weight: bold;
+  src: url('../fonts/Gotham-Bold.otf');
+}
+
+@font-face {
+  font-family: $body-font;
+  font-weight: normal;
+  src: url('../fonts/Gotham-Book.otf');
+}
