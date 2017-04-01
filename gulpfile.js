@@ -17,9 +17,9 @@ gulp.task('clean', function () {
 
 gulp.task('normalize', function() {
     gulp.src('./bower_components/normalize-scss/sass/_normalize.scss')
-        .pipe(gulp.dest('./sass/vendor/'));
-    gulp.src(['./bower_components/normalize-scss/sass/normalize/*.scss','!./bower_components/normalize-scss/sass/normalize/_import-now.scss'])
-        .pipe(gulp.dest('./sass/vendor/normalize'));
+        .pipe(gulp.dest('./sass/vendors/'));
+    gulp.src('./bower_components/normalize-scss/sass/normalize/*.scss')
+        .pipe(gulp.dest('./sass/vendors/normalize'));
 });
 
 gulp.task('inject-js-and-css', ['uglify', 'sass-prod'], function () {

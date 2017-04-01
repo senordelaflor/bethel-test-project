@@ -1,6 +1,6 @@
 /* VENDOR - Default fall-backs and external files.
 ========================================================================== */
-@import 'vendors/normalize';
+@import 'vendors/normalize/import-now';
 
 /* BASE - Base Variable file along with starting point Mixins and Placeholders.
 ========================================================================== */
@@ -16,7 +16,6 @@
 @import 'components/line-separator';
 @import 'components/button';
 
-/*
 /* SECTIONS - Structure and layout files.
 ========================================================================== */
 @import 'sections/header';
