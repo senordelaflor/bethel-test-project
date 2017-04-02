@@ -1,7 +1,8 @@
 nav {
   z-index: 1;
+  margin-left: auto;
   @include mq($breakpoint-medium) {
-    margin-left: auto;
+
   }
 }
 

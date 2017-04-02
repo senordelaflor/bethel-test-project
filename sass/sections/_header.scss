@@ -5,7 +5,7 @@ header {
 }
 
 .menu__container {
-  @extend %flex--centered;
+  display: flex;
   width: calc(100% - 40px);
   max-width: 1350px;
   padding: 29px 20px;
@@ -15,7 +15,7 @@ header {
   background-color: $white;
   width: 126px;
   height: 12px;
-  margin-top: 6px;
+  margin-top: 10px;
   @include mq($breakpoint-medium) {
     width: 147px;
     height: 14px;
