@@ -1,6 +1,6 @@
 .hero {
   @include hero-parallax{
-    @include responsive-bg-img('../img/optimized/', 'mohammad_yearuzzaman', 'jpg');
+    @include responsive-fullscreen-bg-img('../img/optimized/', 'mohammad_yearuzzaman');
   };
   @extend %flex--centered;
 }
@@ -23,6 +23,7 @@
 
 h3 {
   .hero & {
+    text-align: center;
     margin: 0 0 30px 0;
     @include mq($breakpoint-medium) {
       margin: 0 0 24px 0;

@@ -1,4 +1,113 @@
 .media {
   @extend %clearfix;
   background-color: $white;
+  padding-top: 121px;
+  overflow-x: hidden;
+}
+
+.media__container {
+  position: relative;
+  margin-bottom: 100px;
+}
+
+.media__images--center {
+  display: flex;
+  flex-direction: column;
+  margin: 125px auto 0;
+  width: 318px;
+}
+
+.media__images--left, .media__images--right {
+  position: absolute;
+  top: -150px;
+}
+
+.media__images--left {
+  right: calc(50% + 159px);
+}
+
+.media__images--right {
+  left: calc(50% + 159px);
+}
+
+.media__images--left-top, .media__images--right-top {
+  display: flex;
+  align-items: flex-end;
+}
+
+.media__images--left-bottom, .media__images--right-bottom {
+  display: flex;
+  align-items: flex-start;
+}
+
+.media__image {
+  background-size: 100% 100%;
+  margin: 10px;
+}
+
+.media__flex-col {
+  @extend %flex-col;
+}
+
+#media__image {
+  &-1 {
+    @include retina-bg-img('../img/optimized/', 'media_1');
+    width: 298px;
+    height: 266px;
+  }
+  &-2 {
+    @include retina-bg-img('../img/optimized/', 'media_2');
+    width: 298px;
+    height: 266px;
+  }
+  &-3 {
+    @include retina-bg-img('../img/optimized/', 'media_3');
+    width: 323px;
+    height: 343px;
+  }
+  &-4 {
+    @include retina-bg-img('../img/optimized/', 'media_4');
+    width: 208px;
+    height: 266px;
+  }
+  &-5 {
+    @include retina-bg-img('../img/optimized/', 'media_5');
+    width: 116px;
+    height: 343px;
+  }
+  &-6 {
+    @include retina-bg-img('../img/optimized/', 'media_6');
+    width: 414px;
+    height: 266px;
+  }
+  &-7 {
+    @include retina-bg-img('../img/optimized/', 'media_7');
+    width: 249px;
+    height: 242px;
+  }
+  &-8 {
+    @include retina-bg-img('../img/optimized/', 'media_8');
+    width: 282px;
+    height: 343px;
+  }
+  &-9 {
+    @include retina-bg-img('../img/optimized/', 'media_9');
+    width: 130px;
+    height: 116px;
+  }
+  &-10 {
+    @include retina-bg-img('../img/optimized/', 'media_10');
+    width: 130px;
+    height: 116px;
+  }
+  &-11 {
+    @include retina-bg-img('../img/optimized/', 'media_11');
+    width: 298px;
+    height: 288px;
+  }
+  &-12 {
+    @include retina-bg-img('../img/optimized/', 'media_12');
+    width: 83px;
+    height: 242px;
+  }
 }

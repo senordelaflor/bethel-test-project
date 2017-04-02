@@ -1,3 +1,9 @@
-//blurb
-//blurb with subtitle
-//blurb with subtitle and background
+.blurb {
+  text-align: center;
+  max-width: 526px;
+  margin: 0 auto;
+  padding: 0 10px;
+  h2 {
+    padding: 15px 0 27px 0;
+  }
+}
