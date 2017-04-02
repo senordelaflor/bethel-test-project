@@ -1,2 +1,23 @@
-//header
-//logo
+header {
+  width: 100%;
+  position: absolute;
+  top: 0;
+}
+
+.menu__container {
+  @extend %flex--centered;
+  width: calc(100% - 40px);
+  max-width: 1350px;
+  padding: 29px 20px;
+}
+
+.logo {
+  background-color: $white;
+  width: 126px;
+  height: 12px;
+  margin-top: 6px;
+  @include mq($breakpoint-medium) {
+    width: 147px;
+    height: 14px;
+  }
+}

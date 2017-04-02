@@ -1,1 +1,18 @@
-//menu
+nav {
+  z-index: 1;
+  @include mq($breakpoint-medium) {
+    margin-left: auto;
+  }
+}
+
+a {
+  nav & {
+    margin: 0 19px;
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
