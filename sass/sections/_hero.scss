@@ -1,9 +1,20 @@
 .hero {
-  @extend %hero;
-  @extend %flex--center;
-  &::before {
+  @include hero-parallax{
     @include responsive-bg-img('../img/optimized/', 'mohammad_yearuzzaman', 'jpg');
-  }
+  };
+  @extend %flex--center;
 }
 
+.hero__header {
+  @extend %flex-col-h-center;
+}
+
+.icon-chevron-down{
+  @include center-absolute(10px);
+  bottom: 65px;
+  &::before {
+    color: $white;
+    font-size: 22px;
+  }
+}
 

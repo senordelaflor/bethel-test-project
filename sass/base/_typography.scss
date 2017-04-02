@@ -1,11 +1,25 @@
+body {
+  font-family: $body-font;
+  font-weight: normal;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.28px;
+  line-height: 27px;
+  color: $dark-grey;
+}
+
 h1 {
   font-family: $title-font;
   font-style: italic;
   font-weight: normal;
   color: $white;
-  line-height: 60px;
+  letter-spacing: -0.76px;
+  line-height: 48px;
+  padding-bottom: 8px;
+  margin: 0;
   border-bottom: 1px solid $white;
-  @include mq($md){
+  @include mq($breakpoint-medium){
     font-size: 68px;
   }
 }
@@ -14,3 +28,19 @@ h1 {
 //h4
 //p
 //a
+
+h3 {
+  line-height: 58px;
+  letter-spacing: -0.29px;
+  font-weight: normal;
+  color: $white;
+  opacity: 0.8;
+  @include mq($breakpoint-medium){
+    margin: 24px 0;
+    font-size: 26px;
+  }
+}
+
+p{
+  opacity: 0.5;
+}
