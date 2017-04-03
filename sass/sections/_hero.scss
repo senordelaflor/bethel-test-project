@@ -1,5 +1,5 @@
 #hero {
-  @include hero-parallax{
+  @include hero ('parallax'){
     @include responsive-fullscreen-bg-img('../img/optimized/', 'mohammad_yearuzzaman');
   };
   @extend %flex--centered;

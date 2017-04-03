@@ -13,10 +13,12 @@ header {
 }
 
 .logo {
+  position: relative;
   background-color: $white;
   width: 126px;
   height: 12px;
   margin-top: 10px;
+  z-index: 1;
   @include mq($breakpoint-medium) {
     width: 147px;
     height: 14px;
