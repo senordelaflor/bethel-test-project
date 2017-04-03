@@ -1,4 +1,4 @@
-.numbers {
+#numbers {
   @extend %clearfix;
   background-color: $white;
   padding-top: 50px;
@@ -38,4 +38,43 @@
   font-size: 17px;
   line-height: 27px;
   padding-top: 10px;
+}
+
+.blurb-bg {
+  position: relative;
+  height: 346px;
+  padding: 68px 0;
+  &::before {
+    content: '';
+    position: absolute;
+    background-color: $tan;
+    opacity: 0.5;
+    height: 346px;
+    max-width: 700px;
+    width: 100%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+}
+
+.blurb__container {
+  @extend %flex--vertically-centered;
+  position: relative;
+  height: 346px;
+  &::before, &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 95px;
+    left: 50%;
+    border-left: 1px solid $light-grey-variation;
+    opacity: 0.5;
+  }
+  &::before {
+    top: -47.5px;
+  }
+  &::after {
+    bottom: -47.5px;
+  }
 }

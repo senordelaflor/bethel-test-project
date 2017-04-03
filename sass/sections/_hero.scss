@@ -1,4 +1,4 @@
-.hero {
+#hero {
   @include hero-parallax{
     @include responsive-fullscreen-bg-img('../img/optimized/', 'mohammad_yearuzzaman');
   };
@@ -22,7 +22,7 @@
 }
 
 h3 {
-  .hero & {
+  #hero & {
     text-align: center;
     margin: 0 0 30px 0;
     @include mq($breakpoint-medium) {
@@ -32,7 +32,7 @@ h3 {
 }
 
 h1 {
-  .hero & {
+  #hero & {
     border-bottom: 1px solid $white;
     @include mq($breakpoint-medium) {
       padding-bottom: 8px;
