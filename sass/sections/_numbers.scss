@@ -7,7 +7,7 @@
 .numbers__container {
   margin: 78px 0;
   @include mq($breakpoint-large) {
-    margin: 94px 0;
+    margin: 81px 0;
     display: flex;
     justify-content: center;
   }
@@ -15,13 +15,13 @@
 
 .numbers__block {
   padding: 40px 10px;
-  max-width: 245px;
+  max-width: 236px;
   margin: 0 auto;
   color: $light-grey;
   text-align: center;
   @include mq($breakpoint-large) {
     margin: 0;
-    padding: 0 33px;
+    padding: 0 22px;
   }
 }
 
@@ -40,10 +40,19 @@
   padding-top: 10px;
 }
 
-.blurb-bg {
+small {
+  #numbers & {
+    font-weight: bold;
+    font-size: 12px;
+    letter-spacing: -0.2px;
+    line-height: 20px;
+  }
+}
+
+.blurb__bg {
   position: relative;
   height: 346px;
-  padding: 68px 0;
+  padding: 69px 0;
   &::before {
     content: '';
     position: absolute;

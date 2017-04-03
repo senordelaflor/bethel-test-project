@@ -1,2 +1,4 @@
-//images
-//description w/background
+#about {
+  @extend %clearfix;
+  background-color: $white;
+}

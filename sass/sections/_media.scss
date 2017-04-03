@@ -1,9 +1,9 @@
 #media {
-  @extend %clearfix;
-  background-color: $white;
-  padding-top: 121px;
-  overflow-x: hidden;
-}
+   @extend %clearfix;
+   background-color: $white;
+   padding-top: 121px;
+   overflow-x: hidden;
+ }
 
 .media__container {
   position: relative;
