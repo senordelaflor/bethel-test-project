@@ -1,13 +1,38 @@
 nav {
   z-index: 1;
-  margin-left: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
   @include mq($breakpoint-medium) {
-
+    position: initial;
+    margin-left: auto;
   }
 }
 
-a {
-  nav & {
+ul {
+  padding-top: 90px;
+  text-align: right;
+  @include mq($breakpoint-medium) {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0;
+  }
+}
+
+li {
+  padding: 5px 80px 5px 0;
+  background: rgba(255,255,255,0.2);
+  border-bottom: 1px solid $light-tan;
+  &:first-child{
+    @include mq($breakpoint-medium, max) {
+      border-top: 1px solid $light-tan;
+    }
+  }
+  @include mq($breakpoint-medium) {
+    background: none;
+    border: none;
+    padding: 0;
     margin: 0 19px;
     &:first-child {
       margin-left: 0;
@@ -16,4 +41,20 @@ a {
       margin-right: 0;
     }
   }
+}
+
+.menu__mobile {
+  @include mq($breakpoint-medium) {
+    display: none;
+  }
+}
+
+#menu__hamburger {
+  border-bottom: 10.5px double $white;
+  border-top: 3.5px solid $white;
+  height: 3.5px;
+  width: 35px;
+  position: absolute;
+  top: 39px;
+  right: 20px;
 }
