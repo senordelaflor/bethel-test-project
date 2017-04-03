@@ -1,1 +1,15 @@
-//line separator for numbers section
+.line-separator {
+  &::after {
+    content: '';
+    display: block;
+    width: 30px;
+    padding-top: 28px;
+    margin: 0 auto 28px;
+    border-bottom: 2px solid $light-grey;
+    opacity: 0.5;
+    @include mq($breakpoint-large) {
+      padding-top: 32px;
+      margin: 0 auto 32px;
+    }
+  }
+}

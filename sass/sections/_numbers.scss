@@ -1,2 +1,41 @@
-//numbers
-//description
+.numbers {
+  @extend %clearfix;
+  background-color: $white;
+  padding-top: 50px;
+}
+
+.numbers__container {
+  margin: 78px 0;
+  @include mq($breakpoint-large) {
+    margin: 94px 0;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.numbers__block {
+  padding: 40px 10px;
+  max-width: 245px;
+  margin: 0 auto;
+  color: $light-grey;
+  text-align: center;
+  @include mq($breakpoint-large) {
+    margin: 0;
+    padding: 0 33px;
+  }
+}
+
+.number {
+  font-family: $main-title-font;
+  font-size: 72px;
+  line-height: 56px;
+  letter-spacing: -0.8px;
+  color: $light-blue;
+}
+
+.number__title {
+  font-family: $main-title-font;
+  font-size: 17px;
+  line-height: 27px;
+  padding-top: 10px;
+}
