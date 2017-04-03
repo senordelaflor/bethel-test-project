@@ -1,7 +1,8 @@
 #hero {
-  @include hero ('parallax'){
+  @include hero('parallax') {
     @include responsive-fullscreen-bg-img('../img/optimized/', 'mohammad_yearuzzaman');
-  };
+  }
+;
   @extend %flex--centered;
 }
 
@@ -9,10 +10,11 @@
   @extend %flex-col--centered;
 }
 
-.icon-chevron-down{
-  @include center-absolute(20px);
+.icon-chevron-down {
+  @include center-absolute(40px);
+  text-align: center;
   bottom: 50px;
-  @include mq($breakpoint-medium){
+  @include mq($breakpoint-medium) {
     bottom: 65px;
   }
   &::before {
