@@ -1,1 +1,9 @@
-//button
+.button {
+  @extend %flex--centered;
+  font-weight: bolder;
+  padding: 16px 0;
+  border: 1px solid $black;
+  color: $black;
+  text-transform: uppercase;
+  opacity: 0.5;
+}

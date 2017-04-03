@@ -93,3 +93,20 @@ $breakpoint-xlarge: 1442px;
   right: 0;
   margin: 0 auto;
 }
+
+//add opaque background
+@mixin opaque-bg($color, $opacity, $height) {
+  height: $height;
+  &::before {
+    content: '';
+    position: absolute;
+    background-color: $color;
+    opacity: $opacity;
+    width: 100%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    height: $height;
+    @content;
+  }
+}

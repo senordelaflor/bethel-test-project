@@ -1,4 +1,45 @@
 #about {
   @extend %clearfix;
   background-color: $white;
+  padding: 178px 0;
 }
+
+.about__bg {
+  @include opaque-bg($tan, 0.5, 691px);
+  display: flex;
+}
+
+.about__images {
+  @include mq($breakpoint-large) {
+    width: 50%;
+  }
+}
+
+.about__copy-container {
+
+  position: relative;
+  margin: 0 auto;
+  @include mq($breakpoint-large) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+  }
+}
+
+h2 {
+  #about & {
+    padding: 15px 0 16px 0;
+  }
+}
+
+p {
+  #about & {
+    padding: 14px 0;
+  }
+}
+
+.about__copy {
+  max-width: 440px;
+}
+

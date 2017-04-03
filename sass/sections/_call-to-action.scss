@@ -1,0 +1,12 @@
+#call-to-action {
+  @extend %clearfix;
+  background-color: $white;
+  padding: 85px 0 159px;
+}
+
+.button {
+  #call-to-action & {
+    max-width: 130px;
+    margin: 26px auto 0;
+  }
+}

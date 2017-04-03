@@ -1,1 +1,5 @@
-//footer
+footer {
+  @extend %clearfix;
+  min-height: 160px;
+  background-color: $tan;
+}
