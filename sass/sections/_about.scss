@@ -1,35 +1,109 @@
 #about {
   @extend %clearfix;
   background-color: $white;
-  padding: 178px 0;
+  padding: 178px 0 74px 0;
+  @include mq($breakpoint-large) {
+    padding: 178px 0;
+  }
 }
 
 .about__bg {
   background-color: $light-tan;
-  min-height: 691px;
   display: flex;
+  flex-direction: column;
+  @include mq($breakpoint-large) {
+    flex-direction: row;
+    max-height: 483.69px;
+  }
+  @include mq($breakpoint-xlarge) {
+    max-height: 691px;
+  }
 }
 
 .about__images {
+  position: relative;
+  height: 88.47vw;
+  width: 320px;
+  max-width: 275px;
+  max-height: 310px;
+  margin: 0 auto;
+  @include mq($breakpoint-medium) {
+    width: 85vw;
+    height: 88.47vw;
+  }
   @include mq($breakpoint-large) {
+    margin: 0;
     width: 50%;
+    max-width: 590px;
+    max-height: 580px;
+  }
+  @include mq($breakpoint-xlarge) {
+    max-width: 741px;
+    max-height: 774px;
   }
 }
 
-.about__image {
+#about__image {
   &-1 {
     @include retina-bg-img($images-path, 'about');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 85vw;
+    height: 88.47vw;
+    min-width: 259.35px;
+    min-height: 270.9px;
+    max-width: 259.35px;
+    max-height: 270.9px;
+    position: absolute;
+    top: -38.5px;
+    left: 0;
+    box-shadow: 5px 10px 30px 0 rgba(0, 0, 0, 0.2);
+    @include mq($breakpoint-large) {
+      top: -52px;
+      max-width: 518.7px;
+      max-height: 541.79px;
+    }
+    @include mq($breakpoint-xlarge) {
+      top: -77px;
+      max-width: 741px;
+      max-height: 774px;
+    }
   }
   &-2 {
     @include retina-bg-img($images-path, 'about_2');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 57.5vw;
+    height: 40.5vw;
+    min-width: 237.65px;
+    min-height: 188.3px;
+    max-width: 237.65px;
+    max-height: 188.3px;
+    position: absolute;
+    top: 70px;
+    left: 37px;
+    box-shadow: 5px 10px 30px 0 rgba(0, 0, 0, 0.2);
+    @include mq($breakpoint-large) {
+      max-width: 475.29px;
+      max-height: 376.59px;
+      top: 168px;
+      left: 92px;
+    }
+    @include mq($breakpoint-xlarge) {
+      max-width: 679px;
+      max-height: 538px;
+      top: 236px;
+      left: 112px;
+    }
   }
 }
-
 
 .about__copy-container {
   position: relative;
   margin: 0 auto;
+  padding: 0 20px 50px;
   @include mq($breakpoint-large) {
+    padding: 0 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -50,6 +124,6 @@ p {
 }
 
 .about__copy {
-  max-width: 440px;
+  max-width: 430px;
 }
 

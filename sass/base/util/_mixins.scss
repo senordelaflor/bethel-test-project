@@ -41,7 +41,7 @@ $breakpoint-xlarge: 1442px;
 }
 
 @mixin retina-bg-img($image-path, $image-name, $extension: 'jpg') {
-  background-image: url($image-path + $image-name + $extension);
+  background-image: url($image-path + $image-name + '.' + $extension);
   @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx), (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
     background-image: url($image-path + $image-name + '_2x.' + $extension);
   }
