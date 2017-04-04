@@ -268,7 +268,7 @@ var ascendingNumbers = function () {
             var now = new Date().getTime();
             var remaining = Math.max((endTime - now) / duration, 0);
             var value = Math.round(end - (remaining * range));
-            obj.innerHTML = value;
+            obj.textContent = value;
             if (value === end) {
                 clearInterval(timer);
             }
