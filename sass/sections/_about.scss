@@ -5,7 +5,8 @@
 }
 
 .about__bg {
-  @include opaque-bg($tan, 0.5, 691px);
+  background-color: $light-tan;
+  min-height: 691px;
   display: flex;
 }
 
@@ -15,8 +16,17 @@
   }
 }
 
-.about__copy-container {
+.about__image {
+  &-1 {
+    @include retina-bg-img($images-path, 'about');
+  }
+  &-2 {
+    @include retina-bg-img($images-path, 'about_2');
+  }
+}
 
+
+.about__copy-container {
   position: relative;
   margin: 0 auto;
   @include mq($breakpoint-large) {

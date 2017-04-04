@@ -51,62 +51,62 @@
 
 #media__image {
   &-1 {
-    @include retina-bg-img('../img/optimized/', 'media_1');
+    @include retina-bg-img($images-path, 'media_1');
     width: 298px;
     height: 266px;
   }
   &-2 {
-    @include retina-bg-img('../img/optimized/', 'media_2');
+    @include retina-bg-img($images-path, 'media_2');
     width: 298px;
     height: 266px;
   }
   &-3 {
-    @include retina-bg-img('../img/optimized/', 'media_3');
+    @include retina-bg-img($images-path, 'media_3');
     width: 323px;
     height: 343px;
   }
   &-4 {
-    @include retina-bg-img('../img/optimized/', 'media_4');
+    @include retina-bg-img($images-path, 'media_4');
     width: 208px;
     height: 266px;
   }
   &-5 {
-    @include retina-bg-img('../img/optimized/', 'media_5');
+    @include retina-bg-img($images-path, 'media_5');
     width: 116px;
     height: 343px;
   }
   &-6 {
-    @include retina-bg-img('../img/optimized/', 'media_6');
+    @include retina-bg-img($images-path, 'media_6');
     width: 414px;
     height: 266px;
   }
   &-7 {
-    @include retina-bg-img('../img/optimized/', 'media_7');
+    @include retina-bg-img($images-path, 'media_7');
     width: 249px;
     height: 242px;
   }
   &-8 {
-    @include retina-bg-img('../img/optimized/', 'media_8');
+    @include retina-bg-img($images-path, 'media_8');
     width: 282px;
     height: 343px;
   }
   &-9 {
-    @include retina-bg-img('../img/optimized/', 'media_9');
+    @include retina-bg-img($images-path, 'media_9');
     width: 130px;
     height: 116px;
   }
   &-10 {
-    @include retina-bg-img('../img/optimized/', 'media_10');
+    @include retina-bg-img($images-path, 'media_10');
     width: 130px;
     height: 116px;
   }
   &-11 {
-    @include retina-bg-img('../img/optimized/', 'media_11');
+    @include retina-bg-img($images-path, 'media_11');
     width: 298px;
     height: 288px;
   }
   &-12 {
-    @include retina-bg-img('../img/optimized/', 'media_12');
+    @include retina-bg-img($images-path, 'media_12');
     width: 83px;
     height: 242px;
   }

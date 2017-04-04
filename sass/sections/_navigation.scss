@@ -11,7 +11,6 @@ nav {
 }
 
 ul {
-  //opacity: 0;
   transform: translateY(-218px);
   position: absolute;
   width: 100%;
@@ -31,7 +30,6 @@ ul {
   }
   .menu__hamburger--opened & {
     transform: translateY(0);
-    //opacity: 1;
   }
 }
 

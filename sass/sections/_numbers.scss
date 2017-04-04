@@ -51,10 +51,10 @@ small {
 
 .blurb__bg {
   position: relative;
-  padding: 69px 0;
-  @include opaque-bg($tan, 0.5, 346px){
-    max-width: 700px;
-  };
+  margin: 122px auto 70px auto;
+  background-color: $light-tan;
+  min-height: 346px;
+  max-width: 700px;
 }
 
 .blurb__container {
