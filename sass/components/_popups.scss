@@ -1,0 +1,58 @@
+#popups {
+  @extend %flex--centered;
+  &::before {
+    content: '';
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    background-color: $black;
+
+  }
+  &.popup--visible {
+    &::before {
+      z-index: 100;
+      opacity: 0.5;
+    }
+  }
+}
+
+.hide {
+  display: none;
+}
+
+.screenlock {
+  overflow-y: hidden;
+}
+
+.popup__container {
+  @extend %flex--centered;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.popup {
+  background: $white;
+  width: 90vw;
+  height: 60vw;
+  max-height: 500px;
+  max-width: 900px;
+  position: relative;
+  z-index: 102;
+  .popup--visible & {
+
+  }
+}
+
+.popup__animate {
+  transition: opacity 0.2s;
+}
