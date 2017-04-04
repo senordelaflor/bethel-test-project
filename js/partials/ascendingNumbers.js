@@ -9,8 +9,7 @@ var ascendingNumbers = function () {
         var elemHeight = el.getBoundingClientRect().height;
         var overhang = elemHeight * (1 - percentVisible);
 
-        var isVisible = (elemTop >= -overhang) && (elemBottom <= window.innerHeight + overhang);
-        return isVisible;
+        return (elemTop >= -overhang) && (elemBottom <= window.innerHeight + overhang);
     },
 
     animateValue = function (obj, start, end, duration) {
