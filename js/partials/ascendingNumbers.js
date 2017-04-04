@@ -1,7 +1,9 @@
 var ascendingNumbers = function () {
 
-    var isScrolledIntoView = function(el) {
-        var percentVisible = 0.3;
+    var numbersFinished = 0,
+
+    isScrolledIntoView = function(el) {
+        var percentVisible = 0.1;
         var elemTop = el.getBoundingClientRect().top;
         var elemBottom = el.getBoundingClientRect().bottom;
         var elemHeight = el.getBoundingClientRect().height;
@@ -43,13 +45,19 @@ var ascendingNumbers = function () {
     },
 
     startCounter = function() {
-        if (isScrolledIntoView(document.getElementById('numbers'))) {
             var numbers = document.querySelectorAll('.counter');
-            for (var b = 0; b < numbers.length; b++) {
-                animateValue(numbers[b], 0, numbers[b].getAttribute('count-to'), 2000);
+
+            if (numbersFinished === 4) {
+                window.removeEventListener('scroll', startCounter, false);
             }
-            window.removeEventListener('scroll', startCounter, false);
-        }
+
+            for (var b = 0; b < numbers.length; b++) {
+                if (isScrolledIntoView(numbers[b]) && !numbers[b].classList.contains('finished')) {
+                    animateValue(numbers[b], 0, numbers[b].getAttribute('count-to'), 2000);
+                    numbers[b].classList.add('finished');
+                    numbersFinished += 1;
+                }
+            }
     },
 
     init = function () {
