@@ -76,6 +76,7 @@ gulp.task('jsconcat', function () {
         './js/partials/mobileMenu.js',
         './js/vendors/jump.js',
         './js/partials/animateScrollTo.js',
+        './js/partials/ascendingNumbers.js',
         './js/partials/init.js'
         ])
         .pipe(sourcemaps.init())
