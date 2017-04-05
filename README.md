@@ -35,10 +35,12 @@ I was asked to support most modern browsers. I have tested the site under macOs 
 
 I have added some scrollTo animation for when the menu links or arrow down are clicked. Moreover, I added a function that animates the numbers by counting to them. Also, I have added some basic animation for the navbar as well as a hamburger menu for the mobile version. 
 
+## Performance.
+
+After minification, bethel.css weighs 25kb. After minification and uglifying, bethel.js weighs 4kb. If we gzip both files, we end up with bethel.css weighing 5kb and bethel.js weighing 2kb, which is great savings in terms of bandwidth. Furthermore, the images can be lazyloaded to further improve page load speeds, as long as we are okay with not having all images available right away. 
 
 
-
-Let me kno if you have any questions,
+Let me know if you have any questions,
 
 
 Looking forward to hearing back from you! 
