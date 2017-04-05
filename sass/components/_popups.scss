@@ -44,7 +44,8 @@
   }
 }
 
-.popup {
+#popup {
+  @extend %flex-col--centered;
   background: $white;
   width: 90vw;
   height: 60vw;

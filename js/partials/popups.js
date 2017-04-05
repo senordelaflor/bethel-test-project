@@ -1,6 +1,7 @@
 var popups = function() {
 
     var popupEl = document.getElementById('popups'),
+        youtubeEl = document.getElementById('popup__video'),
 
     isClickOutsidePopup = function(e) {
         var popup = document.getElementById('popup'),
@@ -14,9 +15,12 @@ var popups = function() {
 
     openPopup = function(e) {
         e.preventDefault();
+
         popupEl.classList.remove('hide');
         popupEl.classList.add('popup--visible');
+        bethel.loadYoutubeAsync(youtubeEl, e.target.href);
         popupEl.addEventListener('click', isClickOutsidePopup);
+
     },
 
     attachOpenPopupEvents = function() {
