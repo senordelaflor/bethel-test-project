@@ -1,9 +1,9 @@
 #media {
-   @extend %clearfix;
-   background-color: $white;
-   padding-top: 121px;
-   overflow-x: hidden;
- }
+  @extend %clearfix;
+  background-color: $white;
+  padding-top: 121px;
+  overflow-x: hidden;
+}
 
 .media__container {
   position: relative;
@@ -13,21 +13,34 @@
 .media__images--center {
   display: flex;
   flex-direction: column;
-  margin: 125px auto 0;
-  width: 318px;
+  margin: 85px auto 0;
+  width: 135.16px;
+  @include mq($breakpoint-medium) {
+    margin: 125px auto 0;
+    width: 318px;
+  }
 }
 
 .media__images--left, .media__images--right {
   position: absolute;
-  top: -150px;
+  top: -80px;
+  @include mq($breakpoint-medium) {
+    top: -150px;
+  }
 }
 
 .media__images--left {
-  right: calc(50% + 159px);
+  right: calc(50% + 67.58px);
+  @include mq($breakpoint-medium) {
+    right: calc(50% + 159px);
+  }
 }
 
 .media__images--right {
-  left: calc(50% + 159px);
+  left: calc(50% + 67.58px);
+  @include mq($breakpoint-medium) {
+    left: calc(50% + 159px);
+  }
 }
 
 .media__images--left-top, .media__images--right-top {
@@ -42,7 +55,10 @@
 
 .media__image {
   background-size: 100% 100%;
-  margin: 10px;
+  margin: 5px;
+  @include mq($breakpoint-medium) {
+    margin: 10px;
+  }
 }
 
 .media__flex-col {
@@ -52,62 +68,158 @@
 #media__image {
   &-1 {
     @include retina-bg-img($images-path, 'media_1');
-    width: 298px;
-    height: 266px;
+    width: 125.16px;
+    height: 111.72px;
+    @include mq($breakpoint-small) {
+      width: 208.6px;
+      height: 186.2px;
+    }
+    @include mq($breakpoint-medium) {
+      width: 298px;
+      height: 266px;
+    }
   }
   &-2 {
     @include retina-bg-img($images-path, 'media_2');
-    width: 298px;
-    height: 266px;
+    width: 125.16px;
+    height: 111.72px;
+    @include mq($breakpoint-small) {
+      width: 208.6px;
+      height: 186.2px;
+    }
+    @include mq($breakpoint-medium) {
+      width: 298px;
+      height: 266px;
+    }
   }
   &-3 {
     @include retina-bg-img($images-path, 'media_3');
-    width: 323px;
-    height: 343px;
+    width: 135.66px;
+    height: 144.06px;
+    @include mq($breakpoint-small) {
+      width: 226.1px;
+      height: 240.1px;
+    }
+    @include mq($breakpoint-medium) {
+      width: 323px;
+      height: 343px;
+    }
   }
   &-4 {
     @include retina-bg-img($images-path, 'media_4');
-    width: 208px;
-    height: 266px;
+    width: 87.36px;
+    height: 111.72px;
+    @include mq($breakpoint-small) {
+      width: 145.6px;
+      height: 186.2px;
+    }
+    @include mq($breakpoint-medium) {
+      width: 208px;
+      height: 266px;
+    }
   }
   &-5 {
     @include retina-bg-img($images-path, 'media_5');
-    width: 116px;
-    height: 343px;
+    width: 48.72px;
+    height: 144.06px;
+    @include mq($breakpoint-small) {
+      width: 81.2px;
+      height: 240.1px;
+    }
+    @include mq($breakpoint-medium) {
+      width: 116px;
+      height: 343px;
+    }
   }
   &-6 {
     @include retina-bg-img($images-path, 'media_6');
-    width: 414px;
-    height: 266px;
+    width: 173.88px;
+    height: 111.72px;
+    @include mq($breakpoint-small) {
+      width: 289.8px;
+      height: 186.2px;
+    }
+    @include mq($breakpoint-medium) {
+      width: 414px;
+      height: 266px;
+    }
   }
   &-7 {
     @include retina-bg-img($images-path, 'media_7');
-    width: 249px;
-    height: 242px;
+    width: 104.58px;
+    height: 101.64px;
+    @include mq($breakpoint-small) {
+      width: 174.3px;
+      height: 169.4px;
+    }
+    @include mq($breakpoint-medium) {
+      width: 249px;
+      height: 242px;
+    }
   }
   &-8 {
     @include retina-bg-img($images-path, 'media_8');
-    width: 282px;
-    height: 343px;
+    width: 118.44px;
+    height: 144.06px;
+    @include mq($breakpoint-small) {
+      width: 197.4px;
+      height: 240.1px;
+    }
+    @include mq($breakpoint-medium) {
+      width: 282px;
+      height: 343px;
+    }
   }
   &-9 {
     @include retina-bg-img($images-path, 'media_9');
-    width: 130px;
-    height: 116px;
+    width: 54.6px;
+    height: 48.72px;
+    @include mq($breakpoint-small) {
+      width: 91px;
+      height: 81.2px;
+    }
+    @include mq($breakpoint-medium) {
+      width: 130px;
+      height: 116px;
+    }
   }
   &-10 {
     @include retina-bg-img($images-path, 'media_10');
-    width: 130px;
-    height: 116px;
+    width: 54.6px;
+    height: 48.72px;
+    @include mq($breakpoint-small) {
+      width: 91px;
+      height: 81.2px;
+    }
+    @include mq($breakpoint-medium) {
+      width: 130px;
+      height: 116px;
+    }
   }
   &-11 {
     @include retina-bg-img($images-path, 'media_11');
-    width: 298px;
-    height: 288px;
+    width: 125.16px;
+    height: 120.96px;
+    @include mq($breakpoint-small) {
+      width: 208.6px;
+      height: 201.6px;
+    }
+    @include mq($breakpoint-medium) {
+      width: 298px;
+      height: 288px;
+    }
   }
   &-12 {
     @include retina-bg-img($images-path, 'media_12');
-    width: 83px;
-    height: 242px;
+    width: 34.86px;
+    height: 101.64px;
+    @include mq($breakpoint-small) {
+      width: 58.1px;
+      height: 169.4px;
+    }
+    @include mq($breakpoint-medium) {
+      width: 83px;
+      height: 242px;
+    }
   }
 }
