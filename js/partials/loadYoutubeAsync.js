@@ -1,0 +1,3 @@
+bethel.loadYoutubeAsync = function (){
+
+};

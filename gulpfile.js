@@ -75,7 +75,6 @@ gulp.task('jsconcat', function () {
     return gulp.src(['./js/partials/animate.js',
         './js/partials/mobileMenu.js',
         './js/vendors/jump.js',
-        './js/partials/animateScrollTo.js',
         './js/partials/ascendingNumbers.js',
         './js/partials/init.js'
         ])

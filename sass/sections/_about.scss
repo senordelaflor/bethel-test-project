@@ -46,6 +46,7 @@
 #about__image {
   &-1 {
     @include retina-bg-img($images-path, 'about');
+    background-color: $dark-grey;
     background-size: cover;
     background-repeat: no-repeat;
     width: 85vw;
@@ -71,6 +72,7 @@
   }
   &-2 {
     @include retina-bg-img($images-path, 'about_2');
+    background-color: $dark-grey;
     background-size: cover;
     background-repeat: no-repeat;
     width: 57.5vw;
