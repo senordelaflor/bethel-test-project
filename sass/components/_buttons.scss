@@ -1,0 +1,38 @@
+.button {
+  @extend %flex--centered;
+  font-weight: bolder;
+  padding: 16px 0;
+  border: 1px solid $black;
+  color: $black;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+.play-button {
+  position: relative;
+  &::before {
+    content: '';
+    display: block;
+    width: 75px;
+    height: 75px;
+    background: transparent;
+    position: absolute;
+    top: calc(50% - 35px);
+    left: calc(50% - 37px);
+    border-radius: 50%;
+    border: 1px solid $white;
+  }
+  &::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 22px solid #FFFFFF;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    position: absolute;
+    top: calc(50% - 11px);
+    left: calc(50% - 7.5px);
+    z-index: 100;
+  }
+}

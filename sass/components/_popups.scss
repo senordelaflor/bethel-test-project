@@ -18,10 +18,11 @@
       opacity: 0.5;
     }
   }
-}
-
-.hide {
-  display: none;
+  &.hide {
+    &::before{
+      display: none;
+    }
+  }
 }
 
 .screenlock {
@@ -38,6 +39,9 @@
   left: 0;
   right: 0;
   z-index: 100;
+  .hide & {
+    display: none;
+  }
 }
 
 .popup {
@@ -50,6 +54,9 @@
   z-index: 102;
   .popup--visible & {
 
+  }
+  .hide & {
+    display: none;
   }
 }
 
