@@ -6,6 +6,10 @@
   color: $black;
   text-transform: uppercase;
   opacity: 0.5;
+  &:hover{
+    background-color: $black;
+    color: $white;
+  }
 }
 
 .play-button {

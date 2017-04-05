@@ -10,14 +10,38 @@ var popups = function() {
         }
     },
 
-    isClickOutsidePopup = function(e) {
+    removeClosePopupEvents = function() {
+        popupEl.removeEventListener('click', enableClosePopupClickingOnOverlay);
+        var closePopupButtons = document.getElementsByClassName('close-popup');
+        for (var d = 0; d < closePopupButtons.length; d++) {
+            closePopupButtons[d].removeEventListener('click', closePopup);
+        }
+    },
+
+    closePopup = function(e) {
+        if(e !== undefined){
+            e.preventDefault();
+        }
+
+        popupEl.classList.add('hide');
+        popupEl.classList.remove('popup--visible');
+        removeClosePopupEvents();
+        removeIframe();
+    },
+
+    enableClosePopupClickingOnOverlay = function(e) {
         var popup = document.getElementById('popup'),
             findIfClickIsInsidePopup = bethel.findClosest(e.target, popup);
         if (findIfClickIsInsidePopup === null){
-            popupEl.classList.add('hide');
-            popupEl.classList.remove('popup--visible');
-            popupEl.removeEventListener('click', isClickOutsidePopup);
-            removeIframe();
+           closePopup();
+        }
+    },
+
+    attachClosePopupEvents = function() {
+        popupEl.addEventListener('click', enableClosePopupClickingOnOverlay);
+        var closePopupButtons = document.getElementsByClassName('close-popup');
+        for (var d = 0; d < closePopupButtons.length; d++) {
+            closePopupButtons[d].addEventListener('click', closePopup);
         }
     },
 
@@ -27,8 +51,7 @@ var popups = function() {
         popupEl.classList.remove('hide');
         popupEl.classList.add('popup--visible');
         bethel.loadYoutubeAsync(youtubeEl, this.href);
-        popupEl.addEventListener('click', isClickOutsidePopup);
-
+        attachClosePopupEvents();
     },
 
     attachOpenPopupEvents = function() {
@@ -38,16 +61,8 @@ var popups = function() {
         }
     },
 
-    attachClosePopupEvents = function() {
-        var closePopupButtons = document.getElementsByClassName('close-popup');
-        for (var d = 0; d < closePopupButtons.length; d++) {
-            closePopupButtons[d].addEventListener('click', closePopupButtons);
-        }
-    },
-
     init = function() {
          attachOpenPopupEvents();
-         attachClosePopupEvents();
     };
 
     init();

@@ -76,3 +76,21 @@ iframe {
     left: 0;
   }
 }
+
+.close-popup {
+  color: $dark-grey;
+  position: absolute;
+  top: 1.7vw;
+  right: 5vw;
+  padding: 0.5vw;
+  @include mq($breakpoint-medium) {
+    top: 1.7vw;
+    right: 3vw;
+    padding: 10px;
+
+  }
+  &::after{
+    content: 'x';
+    padding-left: 10px;
+  }
+}
