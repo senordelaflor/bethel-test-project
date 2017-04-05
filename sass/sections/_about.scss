@@ -16,7 +16,9 @@
     max-height: 483.69px;
   }
   @include mq($breakpoint-xlarge) {
+    max-width: 1440px;
     max-height: 691px;
+    margin: 0 auto;
   }
 }
 
