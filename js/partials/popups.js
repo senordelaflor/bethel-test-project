@@ -4,8 +4,8 @@ var popups = function() {
 
     isClickOutsidePopup = function(e) {
         var popup = document.getElementById('popup'),
-            isNull = bethel.findClosest(e.target, popup );
-        if (isNull === null){
+            findIfClickIsInsidePopup = bethel.findClosest(e.target, popup);
+        if (findIfClickIsInsidePopup === null){
             popupEl.classList.add('hide');
             popupEl.classList.remove('popup--visible');
             popupEl.removeEventListener('click', isClickOutsidePopup);
