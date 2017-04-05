@@ -65,6 +65,13 @@ var popups = function() {
     var popupEl = document.getElementById('popups'),
         youtubeEl = document.getElementById('popup__video'),
 
+    removeIframe = function() {
+        var iframes = document.querySelectorAll('iframe');
+        for (var i = 0; i < iframes.length; i++) {
+            iframes[i].parentNode.removeChild(iframes[i]);
+        }
+    },
+
     isClickOutsidePopup = function(e) {
         var popup = document.getElementById('popup'),
             findIfClickIsInsidePopup = bethel.findClosest(e.target, popup);
@@ -72,6 +79,7 @@ var popups = function() {
             popupEl.classList.add('hide');
             popupEl.classList.remove('popup--visible');
             popupEl.removeEventListener('click', isClickOutsidePopup);
+            removeIframe();
         }
     },
 
@@ -80,7 +88,7 @@ var popups = function() {
 
         popupEl.classList.remove('hide');
         popupEl.classList.add('popup--visible');
-        bethel.loadYoutubeAsync(youtubeEl, e.target.href);
+        bethel.loadYoutubeAsync(youtubeEl, this.href);
         popupEl.addEventListener('click', isClickOutsidePopup);
 
     },
