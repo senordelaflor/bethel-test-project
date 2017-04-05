@@ -41,7 +41,7 @@ gulp.task('html-minify', ['inject-js-and-css'], function () {
 });
 
 gulp.task('gzip', ['html-minify'], function () {
-    gulp.src(['./fonts/*', './dist/Html/*', './images/**/*'])
+    gulp.src(['./fonts/*', './dist/Html/*', './images/**/*', './dist/css/*', './dist/js/*'])
         .pipe(gzip({
             append: false
         }))
@@ -101,8 +101,24 @@ gulp.task('jsconcat', function () {
 
 
 gulp.task('js-prod', ['clean'], function () {
-    return gulp.src('./js/partials/*.js')
+    return gulp.src(['./js/partials/helpers/animate.js',
+        './js/partials/helpers/loadYoutubeAsync.js',
+        './js/partials/helpers/findClosest.js',
+        './js/partials/mobileMenu.js',
+        './js/partials/popups.js',
+        './js/partials/ascendingNumbers.js',
+        './js/partials/init.js',
+        './js/vendors/jump.js'
+        ])
         .pipe(concat('./bethel.js'))
+        .pipe(iife({
+            useStrict: true,
+            trimCode: true,
+            prependSemicolon: false,
+            bindThis: false,
+            params: ['bethel','window', 'document', 'undefined'],
+            args: ['window.bethel = window.bethel || {}', 'window', 'document']
+        }))
         .pipe(gulp.dest('./dist/js'));
 });
 
