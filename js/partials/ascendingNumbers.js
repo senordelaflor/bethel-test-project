@@ -46,7 +46,7 @@ var ascendingNumbers = function () {
     startCounter = function() {
             var numbers = document.querySelectorAll('.counter');
 
-            if (numbersFinished === 4) {
+            if (numbersFinished === numbers.length) {
                 window.removeEventListener('scroll', startCounter, false);
             }
 

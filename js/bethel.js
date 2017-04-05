@@ -1,4 +1,4 @@
-(function(bethel, window, document) {
+(function(bethel, window, document, undefined) {
 "use strict";
 
 bethel.animate = function(el, animationClass) {
@@ -16,6 +16,32 @@ bethel.animate = function(el, animationClass) {
     startAnimation();
 };
 
+bethel.loadYoutubeAsync = function (el, youtubeLink){
+    var iframe = document.createElement('iframe');
+
+    iframe.setAttribute('frameborder', '0');
+    iframe.setAttribute('allowfullscreen', '');
+    iframe.setAttribute('src', youtubeLink);
+
+    el.textContent = '';
+    el.appendChild(iframe);
+};
+bethel.findClosest = function(el, stopAtEl) {
+    try {
+        if (el === stopAtEl) {
+            return el;
+        }
+        do {
+            el = el.parentElement;
+        }
+        while (el !== stopAtEl);
+        return el;
+    }
+    catch (e) {
+        el = null;
+        return el;
+    }
+};
 var mobileMenu = function() {
     var nav = document.querySelector('nav'),
         hamburger = document.getElementById('menu__hamburger'),
@@ -33,6 +59,126 @@ var mobileMenu = function() {
 
     init();
 };
+
+var popups = function() {
+
+    var popupEl = document.getElementById('popups'),
+
+    isClickOutsidePopup = function(e) {
+        var popup = document.getElementById('popup'),
+            isNull = bethel.findClosest(e.target, popup );
+        if (isNull === null){
+            popupEl.classList.add('hide');
+            popupEl.classList.remove('popup--visible');
+            popupEl.removeEventListener('click', isClickOutsidePopup);
+        }
+    },
+
+    openPopup = function(e) {
+        e.preventDefault();
+        popupEl.classList.remove('hide');
+        popupEl.classList.add('popup--visible');
+        popupEl.addEventListener('click', isClickOutsidePopup);
+    },
+
+    attachOpenPopupEvents = function() {
+        var openPopupButtons = document.getElementsByClassName('open-popup');
+        for (var c = 0; c < openPopupButtons.length; c++) {
+            openPopupButtons[c].addEventListener('click', openPopup)
+        }
+    },
+
+    attachClosePopupEvents = function() {
+        var closePopupButtons = document.getElementsByClassName('close-popup');
+        for (var d = 0; d < closePopupButtons.length; d++) {
+            closePopupButtons[d].addEventListener('click', closePopupButtons);
+        }
+    },
+
+    init = function() {
+         attachOpenPopupEvents();
+         attachClosePopupEvents();
+    };
+
+    init();
+};
+var ascendingNumbers = function () {
+
+    var numbersFinished = 0,
+
+    isScrolledIntoView = function(el) {
+        var percentVisible = 0.1;
+        var elemTop = el.getBoundingClientRect().top;
+        var elemBottom = el.getBoundingClientRect().bottom;
+        var elemHeight = el.getBoundingClientRect().height;
+        var overhang = elemHeight * (1 - percentVisible);
+
+        return (elemTop >= -overhang) && (elemBottom <= window.innerHeight + overhang);
+    },
+
+    animateValue = function (obj, start, end, duration) {
+        // assumes integer values for start and end
+        var range = end - start;
+        // no timer shorter than 50ms (not really visible any way)
+        var minTimer = 50;
+        // calc step time to show all interediate values
+        var stepTime = Math.abs(Math.floor(duration / range));
+
+        // never go below minTimer
+        stepTime = Math.max(stepTime, minTimer);
+
+        // get current time and calculate desired end time
+        var startTime = new Date().getTime();
+        var endTime = startTime + duration;
+        var timer;
+
+        var run = function() {
+            var now = new Date().getTime();
+            var remaining = Math.max((endTime - now) / duration, 0);
+            var value = Math.round(end - (remaining * range));
+            obj.textContent = value;
+            if (value === end) {
+                clearInterval(timer);
+            }
+        };
+
+        timer = setInterval(run, stepTime);
+        run();
+
+    },
+
+    startCounter = function() {
+            var numbers = document.querySelectorAll('.counter');
+
+            if (numbersFinished === numbers.length) {
+                window.removeEventListener('scroll', startCounter, false);
+            }
+
+            for (var b = 0; b < numbers.length; b++) {
+                if (isScrolledIntoView(numbers[b]) && !numbers[b].classList.contains('finished')) {
+                    animateValue(numbers[b], 0, numbers[b].getAttribute('count-to'), 2000);
+                    numbers[b].classList.add('finished');
+                    numbersFinished += 1;
+                }
+            }
+    },
+
+    init = function () {
+        window.addEventListener('scroll', startCounter, false);
+        startCounter();
+    };
+
+    init();
+};
+
+
+
+
+
+mobileMenu();
+ascendingNumbers();
+popups();
+
 
 /*! https://github.com/callmecavs/jump.js
 *   http://codepen.io/SitePoint/pen/YqewzZ
@@ -172,79 +318,4 @@ function jump(target, options) {
     }
 
 }
-var ascendingNumbers = function () {
-
-    var numbersFinished = 0,
-
-    isScrolledIntoView = function(el) {
-        var percentVisible = 0.1;
-        var elemTop = el.getBoundingClientRect().top;
-        var elemBottom = el.getBoundingClientRect().bottom;
-        var elemHeight = el.getBoundingClientRect().height;
-        var overhang = elemHeight * (1 - percentVisible);
-
-        return (elemTop >= -overhang) && (elemBottom <= window.innerHeight + overhang);
-    },
-
-    animateValue = function (obj, start, end, duration) {
-        // assumes integer values for start and end
-        var range = end - start;
-        // no timer shorter than 50ms (not really visible any way)
-        var minTimer = 50;
-        // calc step time to show all interediate values
-        var stepTime = Math.abs(Math.floor(duration / range));
-
-        // never go below minTimer
-        stepTime = Math.max(stepTime, minTimer);
-
-        // get current time and calculate desired end time
-        var startTime = new Date().getTime();
-        var endTime = startTime + duration;
-        var timer;
-
-        var run = function() {
-            var now = new Date().getTime();
-            var remaining = Math.max((endTime - now) / duration, 0);
-            var value = Math.round(end - (remaining * range));
-            obj.textContent = value;
-            if (value === end) {
-                clearInterval(timer);
-            }
-        };
-
-        timer = setInterval(run, stepTime);
-        run();
-
-    },
-
-    startCounter = function() {
-            var numbers = document.querySelectorAll('.counter');
-
-            if (numbersFinished === 4) {
-                window.removeEventListener('scroll', startCounter, false);
-            }
-
-            for (var b = 0; b < numbers.length; b++) {
-                if (isScrolledIntoView(numbers[b]) && !numbers[b].classList.contains('finished')) {
-                    animateValue(numbers[b], 0, numbers[b].getAttribute('count-to'), 2000);
-                    numbers[b].classList.add('finished');
-                    numbersFinished += 1;
-                }
-            }
-    },
-
-    init = function () {
-        window.addEventListener('scroll', startCounter, false);
-        startCounter();
-    };
-
-    init();
-};
-
-
-
-
-
-mobileMenu();
-ascendingNumbers();
 }(window.bethel = window.bethel || {}, window, document));

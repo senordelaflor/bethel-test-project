@@ -72,11 +72,14 @@ gulp.task('sass-prod', ['clean'], function () {
 });
 
 gulp.task('jsconcat', function () {
-    return gulp.src(['./js/partials/animate.js',
+    return gulp.src(['./js/partials/helpers/animate.js',
+        './js/partials/helpers/loadYoutubeAsync.js',
+        './js/partials/helpers/findClosest.js',
         './js/partials/mobileMenu.js',
-        './js/vendors/jump.js',
+        './js/partials/popups.js',
         './js/partials/ascendingNumbers.js',
-        './js/partials/init.js'
+        './js/partials/init.js',
+        './js/vendors/jump.js'
         ])
         .pipe(sourcemaps.init())
         .on('error', function (err) {
@@ -89,8 +92,8 @@ gulp.task('jsconcat', function () {
             trimCode: true,
             prependSemicolon: false,
             bindThis: false,
-            params: ["bethel","window", "document"],
-            args: ["window.bethel = window.bethel || {}", "window", "document"]
+            params: ['bethel','window', 'document', 'undefined'],
+            args: ['window.bethel = window.bethel || {}', 'window', 'document']
         }))
         .pipe(gulp.dest('./js'))
         .pipe(browserSync.stream());

@@ -1,3 +1,4 @@
 mobileMenu();
 ascendingNumbers();
+popups();
 

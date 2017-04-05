@@ -52,9 +52,7 @@
   max-width: 900px;
   position: relative;
   z-index: 102;
-  .popup--visible & {
-
-  }
+  box-shadow: 5px 10px 30px 0 rgba(0, 0, 0, 0.2);
   .hide & {
     display: none;
   }
