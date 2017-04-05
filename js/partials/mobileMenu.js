@@ -9,8 +9,23 @@ var mobileMenu = function() {
         nav.classList.toggle('menu__hamburger--opened');
     },
 
+    closeMenu = function(e) {
+        if (nav.classList.contains('menu__hamburger--opened')) {
+            nav.classList.remove('menu__hamburger--opened');
+        }
+    },
+
+    attachCloseMenu = function(e) {
+        var links = document.getElementsByClassName('menu__link');
+
+        for (var d = 0; d < links.length; d++) {
+            links[d].addEventListener('click', closeMenu);
+        }
+    },
+
     init = function() {
         hamburger.addEventListener('click', toggleMenu);
+        attachCloseMenu();
     };
 
     init();

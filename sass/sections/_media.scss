@@ -15,6 +15,9 @@
   flex-direction: column;
   margin: 85px auto 0;
   width: 135.16px;
+  @include mq($breakpoint-small) {
+    width: 218.59px;
+  }
   @include mq($breakpoint-medium) {
     margin: 125px auto 0;
     width: 318px;
@@ -31,6 +34,9 @@
 
 .media__images--left {
   right: calc(50% + 67.58px);
+  @include mq($breakpoint-small) {
+    right: calc(50% + 109.295px);
+  }
   @include mq($breakpoint-medium) {
     right: calc(50% + 159px);
   }
@@ -38,6 +44,9 @@
 
 .media__images--right {
   left: calc(50% + 67.58px);
+  @include mq($breakpoint-small) {
+    left: calc(50% + 109.295px);
+  }
   @include mq($breakpoint-medium) {
     left: calc(50% + 159px);
   }
