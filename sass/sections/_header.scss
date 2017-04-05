@@ -22,5 +22,6 @@ header {
   @include mq($breakpoint-medium) {
     width: 147px;
     height: 14px;
+    margin-top: 12px;
   }
 }

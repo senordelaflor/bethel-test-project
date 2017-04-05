@@ -27,6 +27,7 @@ ul {
     opacity: 1;
     position: relative;
     transform: translateY(0);
+    margin-top: 13px;
   }
   .menu__hamburger--opened & {
     transform: translateY(0);
